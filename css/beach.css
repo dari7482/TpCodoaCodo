@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+.containerBeach {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+
+
+}
+
+.honolulu {
+    width: 50%;
+
+    opacity: 1.0;
+    object-fit: cover;
+}
+
+.Bs-As {
+    background-color: #645E66;
+    width: 50%;
+
+    color: #FFFFFF;
+    padding: 0.8rem;
+    overflow: hidden;
+}
+
+.bsa,
+h1,
+p {
+    margin-bottom: 15px;
+
+}
+
+.bsa,
+button {
+
+    width: 10rem;
+    height: 2rem;
+    border-radius: 6px;
+    border-color: white;
+    color: aliceblue;
+    background-color: transparent;
+    font-size: 16px;
+
+}
