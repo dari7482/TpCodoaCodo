@@ -55,7 +55,7 @@ a:last-child {
 
 /*footer*/
 .footer {
-    background-color: black;
+    background-color: #297289;
     display: flex;
     flex-wrap: wrap;
     width: 100vw;

@@ -7,7 +7,7 @@
 
 .containerBanner {
     width: 100vw;
-    height: 60vh;
+    height: 70vh;
 
 
 }
@@ -33,17 +33,20 @@
     top: 60%;
     right: 8%;
     transform: translateY(-50%);
-    color: whitesmoke;
+    color: #FFF6F6;
     font-weight: bold;
 
 
 
 }
 
-.summaryEvent,
-h1 {
+.summaryEvent {
     text-align: right;
 
+}
+
+.bsas-titulo {
+    text-align: right;
 }
 
 .btn {
