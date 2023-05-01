@@ -22,28 +22,30 @@
 
 .containerSummary {
     position: relative;
+    height: 80%;
 }
 
-.summaryEvent {
 
-    width: 30rem;
-    font-size: 1rem;
+
+.summaryEvent {
+    max-width: 30rem;
+    max-height: 400px;
+    padding: .2rem;
+    font-size: .75rem;
     position: absolute;
     z-index: 1;
-    top: 60%;
-    right: 8%;
-    transform: translateY(-50%);
+    top: 40%;
+    right: 2%;
+
+    overflow: auto;
     color: #FFF6F6;
     font-weight: bold;
-
-
-
-}
-
-.summaryEvent {
     text-align: right;
 
 }
+
+
+
 
 .bsas-titulo {
     text-align: right;
