@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styleTP.css">
+    <link rel="stylesheet" href="./css/ticket.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu">
+            <div class="Conf_BSA">
+                <p><a href="/index.html">Conf BS AS</a></p>
+            </div>
+            <div class="containerOptionNav">
+                <a href="/index.html">La conferencia</a>
+                <a href="">Los Narradores</a>
+                <a href="">El lugar y fecha</a>
+                <a href="">Convertite en orador</a>
+                <a href="">Compar Tikets</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <div class="Card_Estudiantes">
+                <h2>Estudiantes</h2>
+                <p1>Tiene un Descuento</p1>
+                <p1>80%</p1>
+                <p1>Presentar Documentacion</p1>
+            </div>
+            <div class="Card_Trainee">
+                <h2>Trainne</h2>
+                <p1>Tiene un Descuento</p1>
+                <p1>50%</p1>
+                <p1>Presentar Documentacion</p1>
+
+            </div>
+            <div class="Card_Junior">
+                <h2>Junior</h2>
+                <p1>Tiene un Descuento</p1>
+                <p1>15%</p1>
+                <p1>Presentar Documentacion</p1>
+
+            </div>
+            <div class="Section_form">
+                <div class="container_titulo">
+                    <p>VENTA</p>
+                    <h1>VALOR DE TICKET $200</h1>
+
+                </div>
+                <form>
+                    <div class="Datos_Personales">
+                        <div class="col-5 mb-2">
+                            <input type="name" placeholder="Nombre" class="form-control" id="Nombre">
+                        </div>
+                        <div class="col-5 mb-2">
+                            <input type="Apellido" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Apellido" id="Apellido">
+                        </div>
+                        <div class="col-10">
+                            <input type="Correo" class="form-control" aria-describedby="emailHelp" placeholder="Correo"
+                                id="Correo">
+                        </div>
+                        <div class="col-5 mb-4">
+                            <label for="exampleInputEmail1" class="form-label p-1">Cantidad</label>
+                            <input type="number" placeholder="Cantidad" class="form-control" id="Cantidad" min="0"
+                                pattern="^[0-9]+">
+                        </div>
+                        <div class="col-5 mb-1">
+                            <label for="exampleInputEmail1" class="form-label p-1">Categoria</label>
+                            <select class="form-select form-select-col-5 " aria-label=".form-select-lg example"
+                                id="categoria" disabled>
+                                <option selected value="0">Open this select menu</option>
+                                <option value="1" id="Estudiante">Estudiante</option>
+                                <option value="2" id="Trainne">Trainne</option>
+                                <option value="3" id="Junior">Junior</option>
+                            </select>
+                        </div>
+                        <div class="col-10 mb-4">
+                            <p id="Total">
+
+                            </p>
+                        </div>
+
+                        <div class="col-5 mb-4 ">
+                            <button class="btn btn-md bg-success-subtle w-100 bg-green-#00FF00;"
+                                id="borrar">Borrar</button>
+
+                        </div>
+                        <div class="col-5 mb-4 ">
+                            <button class="btn btn-md bg-success-subtle w-100" disabled id="resumen">Resumen</button>
+                        </div>
+
+                    </div>
+            </div>
+
+
+            </form>
+
+        </section>
+
+
+
+
+    </main>
+
+    <footer class="footer">
+        <a class="footeroption" href="">Prguntas frecuentes</a>
+        <a class="footeroption" href="">Constactanos</a>
+        <a class="footeroption" href="">Prensa</a>
+        <a class="footeroption" href="">Conferencia</a>
+        <a class="footeroption" href="">terminos y condiciones</a>
+        <a class="footeroption" href="">Privacidad </a>
+        <a class="footeroption" href="">Estudiantes </a>
+
+    </footer>
+    <script>
+        const nombre = document.getElementById("Nombre")
+        let apellido = document.getElementById("Apellido")
+        let correo = document.getElementById("Correo")
+        let cantidad = document.getElementById("Cantidad")
+        let categoriaSelect = document.getElementById("categoria")
+        console.log(nombre, apellido, correo, cantidad, categoriaSelect)
+
+        function validations() {
+
+
+            if (nombre.value !== "" && apellido.value !== "" && correo.value !== "" && cantidad.value !== "") {
+                console.log('dentro')
+                categoriaSelect.removeAttribute("disabled")
+
+
+            }
+
+
+
+        }
+
+
+
+        nombre.addEventListener("input", validations)
+        apellido.addEventListener("input", validations)
+        correo.addEventListener("input", validations)
+        cantidad.addEventListener("input", validations)
+
+       // apellido.addEventListener("change", validations)
+       // correo.addEventListener("change", validations)
+       // cantidad.addEventListener("change", validations)
+
+
+
+
+
+    </script>
+
+    <script>
+        let categoria = document.getElementById("categoria")
+        let totalPago = document.getElementById("Total")
+        let cantidadTicket = document.getElementById("Cantidad")
+        let buttonResumen = document.getElementById("resumen")
+
+
+
+        function calcValue() {
+            const precio = 200
+            const cantdidad = cantidadTicket.value
+
+            const value = categoria.value
+            console.log(value)
+            if (value === "1") {
+                let total = Math.round(precio * (1 - 0.80)) * cantdidad
+                console.log(total)
+                buttonResumen.removeAttribute("disabled")
+                return totalPago.innerHTML = `<div class="alert alert-primary" role="alert">
+                   Total a Pagar:$ ${total}
+                </div>`
+            }
+            if (value === "2") {
+                let total = (precio * (1 - 0.50)) * cantdidad
+                console.log(total)
+                buttonResumen.removeAttribute("disabled")
+                return totalPago.innerHTML = `<div class="alert alert-primary" role="alert">
+                   Total a Pagar:$ ${total}
+                </div>`
+
+            } if (value === "3") {
+                let total = (precio * (1 - 0.15)) * cantdidad
+                console.log(total)
+                buttonResumen.removeAttribute("disabled")
+                return totalPago.innerHTML = `<div class="alert alert-primary" role="alert">
+                   Total a Pagar:$ ${total}
+                </div>`
+
+
+            } else {
+                return totalPago.innerHTML = ""
+
+            }
+
+
+
+
+        }
+
+        categoria.addEventListener("change", calcValue)
+
+
+    </script>
+    <script>
+        buttonResumen.addEventListener("click", function () {
+            event.preventDefault()
+            event.preventDefault()
+            nombre.value = ""
+            apellido.value = ""
+            correo.value = ""
+            cantidad.value = ""
+            categoria.value = "0"
+            totalPago.innerHTML = ""
+            alert("se ha realizado la compra satisfactoriamente")
+
+        })
+
+    </script>
+    <script>
+        const btnBorrar = document.getElementById("borrar")
+
+
+
+
+
+        btnBorrar.addEventListener("click", function () {
+            event.preventDefault()
+            nombre.value = ""
+            apellido.value = ""
+            correo.value = ""
+            cantidad.value = ""
+            categoria.value = "0"
+            totalPago.innerHTML = ""
+
+            alert("se borraron los datos")
+            buttonResumen.removeAttribute()
+
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>
