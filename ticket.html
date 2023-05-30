@@ -70,8 +70,8 @@
                         </div>
                         <div class="col-5 mb-4">
                             <label for="exampleInputEmail1" class="form-label p-1">Cantidad</label>
-                            <input type="number" placeholder="Cantidad" class="form-control" id="Cantidad" min="0"
-                                pattern="^[0-9]+">
+                            <input type="number" placeholder="Cantidad" class="form-control" onkeydown=false
+                                id="Cantidad" min="0" pattern="^[0-9]+">
                         </div>
                         <div class="col-5 mb-1">
                             <label for="exampleInputEmail1" class="form-label p-1">Categoria</label>
@@ -121,12 +121,35 @@
         <a class="footeroption" href="">Estudiantes </a>
 
     </footer>
+
+    <script>
+        let categoriaSelect = document.getElementById("categoria")
+        let cantidad = document.getElementById("Cantidad")
+
+        function validations() {
+            console.log(cantidad.value < 0)
+            console.log(cantidad.value)
+
+            if (cantidad.value < 0) {
+                alert('Debe ingresar un valor numerico mayor a 0')
+                cantidad.value = 0
+
+
+
+            }
+
+        }
+
+
+        cantidad.addEventListener("input", validations)
+    </script>
+
     <script>
         const nombre = document.getElementById("Nombre")
         let apellido = document.getElementById("Apellido")
         let correo = document.getElementById("Correo")
-        let cantidad = document.getElementById("Cantidad")
-        let categoriaSelect = document.getElementById("categoria")
+
+
         console.log(nombre, apellido, correo, cantidad, categoriaSelect)
 
         function validations() {
@@ -138,7 +161,13 @@
 
 
             }
+            if (nombre.value === "" || apellido.value === "" || correo.value === "" || cantidad.value === "") {
+                console.log('dentro')
+                categoriaSelect.setAttribute('disabled', true)
+                buttonResumen.setAttribute('disabled', true)
 
+
+            }
 
 
         }
@@ -148,7 +177,7 @@
         nombre.addEventListener("input", validations)
         apellido.addEventListener("input", validations)
         correo.addEventListener("input", validations)
-        cantidad.addEventListener("input", validations)
+
 
        // apellido.addEventListener("change", validations)
        // correo.addEventListener("change", validations)
