@@ -126,7 +126,7 @@
         let categoriaSelect = document.getElementById("categoria")
         let cantidad = document.getElementById("Cantidad")
 
-        function validations() {
+        function validationsCant() {
             console.log(cantidad.value < 0)
             console.log(cantidad.value)
 
@@ -137,14 +137,12 @@
 
 
             }
+            validations()
 
         }
 
 
-        cantidad.addEventListener("input", validations)
-    </script>
-
-    <script>
+        cantidad.addEventListener("input", validationsCant)
         const nombre = document.getElementById("Nombre")
         let apellido = document.getElementById("Apellido")
         let correo = document.getElementById("Correo")
@@ -276,6 +274,9 @@
             alert("se borraron los datos")
             buttonResumen.removeAttribute()
 
+            const NombreTest = document.getElementById('Nombre')
+            console.log(NombreTest)
+            //NombreTest.setAttribute("placeholder", 'borrado')
 
         })
 
